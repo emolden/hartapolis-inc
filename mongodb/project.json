@@ -1,0 +1,35 @@
+[
+  {
+      "project_attributes": {
+        "name": "Project Alpha",
+        "team_size": 5,
+        "budget": 100000,
+        "workload": 150,
+        "completion_time": "2025-12-31",
+        "manager_name": "Alice Green"
+      },
+      "tasks": [
+        {
+          "description": "Initial planning phase of the project",
+          "is_completed": false,
+          "person_assigned": "John Doe",
+          "due_date": "2025-04-15",
+          "estimated_duration": 10
+        },
+        {
+          "description": "Develop project timeline and milestones",
+          "is_completed": false,
+          "person_assigned": "Jane Smith",
+          "due_date": "2025-04-30",
+          "estimated_duration": 12
+        },
+        {
+          "description": "Create initial wireframes and mockups",
+          "is_completed": false,
+          "person_assigned": "Emily Brown",
+          "due_date": "2025-05-10",
+          "estimated_duration": 8
+        }
+      ]
+    }
+]
