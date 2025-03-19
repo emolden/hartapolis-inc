@@ -15,18 +15,17 @@ import RequireAuth from './components/RequireAuth';
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [data, setData] = useState(0);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() =>{
     const fetchData = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_PROJECTS_API_URL}`)
+        const response = await fetch(`${import.meta.env.VITE_PROJECTS_API_URL}/api/projects`)
         if (!response.ok) {
           throw new Error('Data could not be fetched');
         }
         const json_response = await response.json();
-        setData(json_response);
+        setProjects(json_response);
         console.log(json_response);
       }
       catch(error) {
@@ -45,7 +44,7 @@ function App() {
           <Route exact path="/login" element={<Login/>
           } />
           <Route exact path="/project-predictor" element={<ProjectPredictor />} />
-          <Route exact path="/" element={<TeamProjects />}/>
+          <Route exact path="/" element={<TeamProjects projects={projects}/>}/>
               {/* Task component is inside Project component */}
           <Route exact path="/projectid" element={<Project />}/>
               
