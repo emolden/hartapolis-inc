@@ -1,0 +1,131 @@
+[
+    
+          {
+            "username": "alice_green",
+            "password": "password",
+            "role": "manager",
+            "email": "alice_green@hartapolis.com",
+            "phone": "+1 (555) 123-4567"
+          },
+          {
+            "username": "john_doe",
+            "password": "password",
+            "role": "employee",
+            "email": "john_doe@hartapolis.com",
+            "phone": "+1 (555) 234-5678"
+          },
+          {
+            "username": "jane_smith",
+            "password": "password",
+            "role": "employee",
+            "email": "jane_smith@hartapolis.com",
+            "phone": "+1 (555) 345-6789"
+          },
+          {
+            "username": "emily_brown",
+            "password": "password",
+            "role": "employee",
+            "email": "emily_brown@hartapolis.com",
+            "phone": "+1 (555) 456-7890"
+          },
+          {
+            "username": "michael_black",
+            "password": "password",
+            "role": "employee",
+            "email": "michael_black@hartapolis.com",
+            "phone": "+1 (555) 567-8901"
+          },
+          {
+            "username": "sophia_white",
+            "password": "password",
+            "role": "employee",
+            "email": "sophia_white@hartapolis.com",
+            "phone": "+1 (555) 678-9012"
+          },
+          {
+            "username": "david_green",
+            "password": "password",
+            "role": "employee",
+            "email": "david_green@hartapolis.com",
+            "phone": "+1 (555) 789-0123"
+          },
+          {
+            "username": "olivia_jones",
+            "password": "password",
+            "role": "employee",
+            "email": "olivia_jones@hartapolis.com",
+            "phone": "+1 (555) 890-1234"
+          },
+          {
+            "username": "aiden_scott",
+            "password": "password",
+            "role": "employee",
+            "email": "aiden_scott@hartapolis.com",
+            "phone": "+1 (555) 901-2345"
+          },
+          {
+            "username": "ella_adams",
+            "password": "password",
+            "role": "employee",
+            "email": "ella_adams@hartapolis.com",
+            "phone": "+1 (555) 012-3456"
+          },
+          {
+            "username": "daniel_harris",
+            "password": "password",
+            "role": "employee",
+            "email": "daniel_harris@hartapolis.com",
+            "phone": "+1 (555) 123-4568"
+          },
+          {
+            "username": "james_lee",
+            "password": "password",
+            "role": "employee",
+            "email": "james_lee@hartapolis.com",
+            "phone": "+1 (555) 234-5679"
+          },
+          {
+            "username": "mia_brown",
+            "password": "password",
+            "role": "employee",
+            "email": "mia_brown@hartapolis.com",
+            "phone": "+1 (555) 345-6780"
+          },
+          {
+            "username": "liam_clark",
+            "password": "password",
+            "role": "employee",
+            "email": "liam_clark@hartapolis.com",
+            "phone": "+1 (555) 456-7891"
+          },
+          {
+            "username": "zoe_white",
+            "password": "password",
+            "role": "employee",
+            "email": "zoe_white@hartapolis.com",
+            "phone": "+1 (555) 567-8902"
+          },
+          {
+            "username": "isaac_harris",
+            "password": "password",
+            "role": "employee",
+            "email": "isaac_harris@hartapolis.com",
+            "phone": "+1 (555) 678-9013"
+          },
+          {
+            "username": "chloe_scott",
+            "password": "password",
+            "role": "employee",
+            "email": "chloe_scott@hartapolis.com",
+            "phone": "+1 (555) 789-0124"
+          },
+          {
+            "username": "ryan_walker",
+            "password": "password",
+            "role": "employee",
+            "email": "ryan_walker@hartapolis.com",
+            "phone": "+1 (555) 890-1235"
+          }
+        
+      
+]

@@ -26,6 +26,35 @@ app.get('/', async (req,res) => {
 })
 
 
+// //joshua adding auth/login
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+  
+    if (!username || !password) {
+      return res.status(400).send('Username and password are required');
+    }
+  
+    try {
+      const client = await MongoClient.connect(MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+      const db = client.db(MONGO_DB);
+      const collection = db.collection('login'); 
+      const user = await collection.findOne({ username });
+      if (!user) {
+        client.close();
+        return res.status(400).send('User not found');
+      }
+      if (user.password !== password) {
+        client.close(); 
+        return res.status(400).send('Invalid Password');
+      }
+      client.close(); 
+      res.status(200).send('Login successful');
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Internal server error');
+    }
+  });
+
 
 
 
