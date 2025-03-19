@@ -1,10 +1,11 @@
-* Create react components
-- NavBar component
+        Create react components
+* NavBar component
 - TeamProjects component
-- React router
-- Authentication
-- include start_date in data - delete current collection
-* create 5 projects and add to project.json and capstone db
+* React router
+* Authentication hook
+* usernames/passwords/isManager collection in db
+        include start_date in data - delete current collection
+        create 5 projects and add to project.json and capstone db
 - Login component
 - Logout button?
 - Project component

@@ -4,6 +4,12 @@ import Project from './components/Project';
 import Login from './components/Login';
 import NavBar from './components/NavBar';
 import TeamProjects from './components/TeamProjects';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
 // import './App.css'
 
 function App() {
@@ -30,19 +36,23 @@ function App() {
 
   return (
     <>
-       <NavBar />
-       <Login />
-          <ProjectPredictor />
-          <TeamProjects />
-          {/* Task component is inside Project component */}
-          <Project />
-          
-        {/* <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/project-predictor" element={<ProjectPredictor />} />
+          <Route exact path="/" element={<TeamProjects />}/>
+              {/* Task component is inside Project component */}
+          <Route exact path="/projectid" element={<Project />}/>
+              
+            {/* <a href="https://vite.dev" target="_blank">
+              <img src={viteLogo} className="logo" alt="Vite logo" />
+            </a>
+            <button onClick={() => setCount((count) => count + 1)}>
+              count is {count}
+            </button> */}
+        </Routes>
+      </Router>
     </>
   )
 }
