@@ -1,15 +1,17 @@
         Create react components
-* NavBar component
+        NavBar component
 - TeamProjects component
-* React router
-* Authentication hook
-* usernames/passwords/isManager collection in db
+        React router
+        Authentication hook
+        usernames/passwords/isManager collection in db
         include start_date in data - delete current collection
         create 5 projects and add to project.json and capstone db
-- Login component
+        Login component
+        Post route for login
 - Logout button?
 - Project component
 - Task component
+- EditableTask component - inside useAuth
 - Put/Post? route to edit tasks
 - Delete route
 - order by
