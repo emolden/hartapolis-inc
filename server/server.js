@@ -11,7 +11,7 @@ const MONGO_DB_URL = 'mongodb://localhost:27017';
 const MONGO_DB = 'capstone';
 //const collection = 'projects'
 
-app.get('/', async (req,res) => {
+app.get('/api/projects', async (req,res) => {
     try{
         const client = await MongoClient.connect(MONGO_DB_URL);
         const db = client.db(MONGO_DB);
