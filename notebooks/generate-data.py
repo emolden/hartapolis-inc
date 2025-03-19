@@ -19,13 +19,13 @@ def format_date (date):
 
 def getting_workload(budget, team_size):
     if budget <= 5000000 and team_size <= 5:
-        return random.randint(1, 50)
+        return random.randint(1, 20)
     elif budget <= 5000000 and team_size > 5:
         return random.randint(51, 100)
     elif budget > 5000000 and team_size <= 5:
         return random.randint(51, 100)
     elif budget > 5000000 and team_size > 5:
-        return random.randint(100, 150)
+        return random.randint(130, 150)
     else: return 75
 
 

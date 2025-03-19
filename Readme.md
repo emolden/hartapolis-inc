@@ -19,5 +19,5 @@
 - ProjectPredictor component
 - Get route for predictions
         create 1000 records of dummy data
-* use sklearn.learn_model.LearnRegression to predict project completion date and workload
+        use sklearn.learn_model.LearnRegression to predict project completion date and workload
 - Display prediction on the page
