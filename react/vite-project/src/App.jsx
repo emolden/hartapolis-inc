@@ -10,6 +10,8 @@ import {
   Routes,
   Link
 } from "react-router-dom";
+import { AuthProvider } from './hooks/AuthContext';
+import RequireAuth from './components/RequireAuth';
 // import './App.css'
 
 function App() {
@@ -38,8 +40,10 @@ function App() {
     <>
       <Router>
         <NavBar />
+        <AuthProvider>
         <Routes>
-          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/login" element={<Login/>
+          } />
           <Route exact path="/project-predictor" element={<ProjectPredictor />} />
           <Route exact path="/" element={<TeamProjects />}/>
               {/* Task component is inside Project component */}
@@ -52,6 +56,7 @@ function App() {
               count is {count}
             </button> */}
         </Routes>
+        </AuthProvider>
       </Router>
     </>
   )

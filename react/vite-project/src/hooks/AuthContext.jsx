@@ -7,18 +7,18 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         try {
-            const response = await fetch(`${import.meta.env.VITE_LOGIN_API_URL}/login`, {
+            const response = await fetch(`${import.meta.env.VITE_LOGIN_API_URL}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ username, password }),
             });
-            const data = await response.json();
-            if (data.uid) {
+            const data = await response.ok;
+            console.log(data)
+            if (data) {
                 setUser({
                     username,
-                    uid: data.uid 
                 });
             } else {
                 throw new Error(data.message || 'Login failed');
