@@ -25,7 +25,6 @@ function App() {
         console.error('Error fetching homepage', error);
       }
     };
-
     fetchData();
   }, []);
 
