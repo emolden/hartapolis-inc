@@ -1,35 +1,186 @@
 [
   {
-      "project_attributes": {
-        "name": "Project Alpha",
-        "team_size": 5,
-        "budget": 100000,
-        "workload": 150,
-        "completion_time": "2025-12-31",
-        "manager_name": "Alice Green"
+    "project_attributes": {
+      "name": "Project Alpha",
+      "team_size": 5,
+      "budget": 100000,
+      "workload": 150,
+      "completion_time": "2025-12-31",
+      "start_date": "2025-04-05",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "description": "Initial planning phase of the project",
+        "is_completed": false,
+        "person_assigned": "John Doe",
+        "due_date": "2025-04-15",
+        "estimated_duration": 10
       },
-      "tasks": [
-        {
-          "description": "Initial planning phase of the project",
-          "is_completed": false,
-          "person_assigned": "John Doe",
-          "due_date": "2025-04-15",
-          "estimated_duration": 10
-        },
-        {
-          "description": "Develop project timeline and milestones",
-          "is_completed": false,
-          "person_assigned": "Jane Smith",
-          "due_date": "2025-04-30",
-          "estimated_duration": 12
-        },
-        {
-          "description": "Create initial wireframes and mockups",
-          "is_completed": false,
-          "person_assigned": "Emily Brown",
-          "due_date": "2025-05-10",
-          "estimated_duration": 8
-        }
-      ]
-    }
+      {
+        "description": "Develop project timeline and milestones",
+        "is_completed": false,
+        "person_assigned": "Jane Smith",
+        "due_date": "2025-04-30",
+        "estimated_duration": 12
+      },
+      {
+        "description": "Create initial wireframes and mockups",
+        "is_completed": false,
+        "person_assigned": "Emily Brown",
+        "due_date": "2025-05-10",
+        "estimated_duration": 8
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Beta",
+      "team_size": 6,
+      "budget": 150000,
+      "workload": 200,
+      "completion_time": "2026-01-31",
+      "start_date": "2025-04-16",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "description": "Gather project requirements from stakeholders",
+        "is_completed": false,
+        "person_assigned": "Michael Black",
+        "due_date": "2025-05-01",
+        "estimated_duration": 15
+      },
+      {
+        "description": "Design the software architecture",
+        "is_completed": false,
+        "person_assigned": "Sophia White",
+        "due_date": "2025-06-01",
+        "estimated_duration": 20
+      },
+      {
+        "description": "Implement database schema and structure",
+        "is_completed": false,
+        "person_assigned": "David Green",
+        "due_date": "2025-07-10",
+        "estimated_duration": 18
+      },
+      {
+        "description": "Develop initial prototypes for testing",
+        "is_completed": false,
+        "person_assigned": "Olivia Jones",
+        "due_date": "2025-08-01",
+        "estimated_duration": 12
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Gamma",
+      "team_size": 4,
+      "budget": 80000,
+      "workload": 120,
+      "completion_time": "2025-10-30",
+      "start_date": "2025-04-09",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "description": "Define project scope and goals",
+        "is_completed": false,
+        "person_assigned": "Aiden Scott",
+        "due_date": "2025-04-25",
+        "estimated_duration": 8
+      },
+      {
+        "description": "Develop core API functionality",
+        "is_completed": false,
+        "person_assigned": "Ella Adams",
+        "due_date": "2025-06-15",
+        "estimated_duration": 16
+      },
+      {
+        "description": "Setup user authentication and security measures",
+        "is_completed": false,
+        "person_assigned": "Daniel Harris",
+        "due_date": "2025-07-05",
+        "estimated_duration": 10
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Delta",
+      "team_size": 7,
+      "budget": 120000,
+      "workload": 180,
+      "completion_time": "2026-03-31",
+      "start_date": "2025-03-26",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "description": "Market research and customer feedback collection",
+        "is_completed": false,
+        "person_assigned": "James Lee",
+        "due_date": "2025-04-10",
+        "estimated_duration": 14
+      },
+      {
+        "description": "Create marketing strategy and positioning plan",
+        "is_completed": false,
+        "person_assigned": "Mia Brown",
+        "due_date": "2025-05-05",
+        "estimated_duration": 12
+      },
+      {
+        "description": "Design promotional materials and ad campaigns",
+        "is_completed": false,
+        "person_assigned": "Liam Clark",
+        "due_date": "2025-06-01",
+        "estimated_duration": 18
+      },
+      {
+        "description": "Launch marketing campaign and monitor performance",
+        "is_completed": false,
+        "person_assigned": "Zoe White",
+        "due_date": "2025-07-15",
+        "estimated_duration": 16
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Epsilon",
+      "team_size": 5,
+      "budget": 95000,
+      "workload": 160,
+      "completion_time": "2025-11-15",
+      "start_date": "2025-04-28",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "description": "Conduct competitive analysis and SWOT analysis",
+        "is_completed": false,
+        "person_assigned": "Isaac Harris",
+        "due_date": "2025-04-18",
+        "estimated_duration": 10
+      },
+      {
+        "description": "Develop front-end user interface",
+        "is_completed": false,
+        "person_assigned": "Chloe Scott",
+        "due_date": "2025-05-20",
+        "estimated_duration": 14
+      },
+      {
+        "description": "Integrate third-party services for data processing",
+        "is_completed": false,
+        "person_assigned": "Ryan Walker",
+        "due_date": "2025-06-30",
+        "estimated_duration": 16
+      }
+    ]
+  }
 ]
