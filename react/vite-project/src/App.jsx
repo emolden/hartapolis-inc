@@ -1,9 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState(0);
+
+  useEffect(() =>{
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_PROJECTS_API_URL}`)
+        if (!response.ok) {
+          throw new Error('Data could not be fetched');
+        }
+        const json_response = await response.json();
+        setData(json_response);
+        console.log(json_response);
+      }
+      catch(error) {
+        console.error('Error fetching homepage', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
