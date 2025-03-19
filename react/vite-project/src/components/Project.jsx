@@ -7,7 +7,8 @@ export default function Project () {
       <h3>(only manager) Edit Project *button*</h3>
       <h6>Team Size: 5</h6>
       <h6>Budget: $100,000</h6>
-      <h6>Workload: 150 hours</h6>
+      <h6>Workload: 150 days</h6>
+      <h6>Start Date: </h6>
       <h6>Completion Date: 12/31/25</h6>
       <h6>Manager: Alice Green</h6>
       <h6>Tasks:</h6>

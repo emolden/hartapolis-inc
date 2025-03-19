@@ -32,9 +32,6 @@ function App() {
     <>
        <NavBar />
        <Login />
-       
-      <h1>Hartapolis Inc</h1>
-      
           <ProjectPredictor />
           <TeamProjects />
           {/* Task component is inside Project component */}
