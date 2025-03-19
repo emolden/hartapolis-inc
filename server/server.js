@@ -26,6 +26,37 @@ app.get('/api/projects', async (req,res) => {
 })
 
 
+//LEFT OFF WEDNESDAY WORKING ON Deleting tasks
+app.patch('/projects/:id', async (req,res) => {
+    try {
+        const client = await MongoClient.connect(MONGO_DB_URL);
+        const db = client.db(MONGO_DB);
+        const collection = db.collection('projects');
+        const { id } = req.params;  
+        const { person_assigned } = req.body;  
+
+        const updatedProject = await collection.updateOne(
+            { _id: new ObjectId(id) },  
+            { 
+                $pull: { 
+                  //  tasks: { person_assigned: person_assigned } 
+                    "person_assigned": "John Doe" 
+                }
+            }
+        );
+        console.log(id);
+        // if (updatedProject.modifiedCount === 0) {
+        //     return res.status(404).send('Project not found or task not found');
+        // }
+
+        res.json(updatedProject);  // Return updated project
+    } 
+    catch (err) {
+            console.error('Error:', err);
+            res.status(500).send('Error deleting task');
+        }
+})
+
 // //joshua adding auth/login
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
