@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 
 import { useAuth } from '../hooks/AuthContext';
-
+import NewRow from "./NewRow";
 import { useState, useEffect, useContext } from 'react'
 import Task from "./Task";
 import RequireAuth from "./RequireAuth";
@@ -9,6 +9,7 @@ import RequireAuth from "./RequireAuth";
 export default function Project () {
     const [project, setProject] = useState(null)
     const [pageEdit, setPageEdit] = useState(false)
+    const [newRow, setNewRow] = useState(false)
 
     const[change, setChange] = useState('')
     
@@ -48,6 +49,10 @@ export default function Project () {
         setPageEdit(!pageEdit)
     }
 
+    const showNewRow = () => {
+        setNewRow(true);
+    }
+
     return (
         <>
         <h3>{project?.project_attributes.name}</h3>
@@ -58,9 +63,8 @@ export default function Project () {
       <h6>Completion Date: {project?.project_attributes.completion_time}</h6>
       <h6>Manager: {project?.project_attributes.manager}</h6>
       <h6>Tasks:</h6>
-      <h6>Order By *dropdown*</h6>
       <RequireAuth>
-      {user?.role==="manager"&&<button onClick={changePageEdit}>Edit</button>}
+      {user?.role==="manager"&&<button onClick={showNewRow}>Add a New Row</button>}
       </RequireAuth>
           <table>
             <thead>
@@ -81,13 +85,14 @@ export default function Project () {
                     Estimated Completion Time
                 </th>
                 
-                {pageEdit? <th>Delete</th> : ""}
+                <th>Delete</th>
 
                 </tr>
             </thead>
-            {/* <tbody> */}
+            <tbody>
             <Task tasks={project?.tasks} pageEdit={pageEdit} fetchProjectById={fetchProjectById}/>
-            {/* </tbody> */}
+            {newRow? <NewRow projectId={project._id} fetchProjectById={fetchProjectById} setNewRow={setNewRow}/> : ""}
+            </tbody>
           </table>
           {pageEdit? <button>Save</button> : ""}
         </>

@@ -123,6 +123,46 @@ app.patch('/api/tasks/iscompleted', async (req,res) => {
         }
 })
 
+app.patch('/api/tasks/delete', async (req,res) => {
+    
+  const { id } = req.body;
+  console.log(id)
+  console.log(id);
+    try {
+        const client = await MongoClient.connect(MONGO_DB_URL);
+        const db = client.db(MONGO_DB);
+        const collection = db.collection('projects');
+        const tasks = await collection.updateOne({"tasks.task_id": id }, { $pull: { "tasks": { "task_id": id } }})
+        
+
+        res.status(201).send();  
+    } 
+    catch (err) {
+            console.error('Error:', err);
+            res.status(500).send('Error patching is complete task');
+        }
+})
+
+
+app.patch('/api/tasks/addnew', async (req,res) => {
+    
+  const { projectId, tasks } = req.body;
+  console.log(projectId)
+  console.log(tasks);
+    try {
+        const client = await MongoClient.connect(MONGO_DB_URL);
+        const db = client.db(MONGO_DB);
+        const collection = db.collection('projects');
+        const addedTask = await collection.updateOne({_id: new ObjectId(projectId)}, { $push: { "tasks": tasks } })
+        
+
+        res.status(201).send();  
+    } 
+    catch (err) {
+            console.error('Error:', err);
+            res.status(500).send('Error patching is complete task');
+        }
+})
 
 app.listen(PORT, () => {console.log(`Server is running on http://localhost:${PORT}`);});
 

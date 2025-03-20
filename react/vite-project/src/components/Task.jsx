@@ -42,21 +42,18 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
         
     }
 
-    const handleDelete = async (e, ) => {
-        
-        // let value = e.target.innerHTML
-        console.log(id)
-        const taskInfo = {
-            id: id,
-            is_completed: !isCompleted
+    const handleDelete = async (e, id) => {
+        // console.log(id)
+        const taskToDelete = {
+            id: id
         }
         try {
-            const response = await fetch(`http://localhost:3000/api/tasks/iscompleted`, {
+            const response = await fetch(`http://localhost:3000/api/tasks/delete`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(taskInfo),
+                body: JSON.stringify(taskToDelete),
             });
             console.log(response)
 
@@ -77,7 +74,6 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
 
     return (
         <>
-            <tbody>
             
             {
                 tasks?.map((task) => ( 
@@ -119,11 +115,10 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
                         onChange={(e) => setCompletionTime({...completionTime, [`${task.task_id}`]: e.target.value})}
                         /> hours
                     </td> : <td>{task.estimated_duration}</td> }
-                    {pageEdit? <td><button onClick={(e) => handleDelete()}>X</button></td> : ""}
+                    <td><button onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> 
                 </tr>
                 ))
             }
-            </tbody>
             
         </>
     );
