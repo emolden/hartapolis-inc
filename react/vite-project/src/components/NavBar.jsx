@@ -6,6 +6,12 @@ import {
   } from "react-router-dom";
 
 export default function NavBar () {
+//logout button reloads page which effectively logs out
+const logsOut = () => {
+    window.location.reload();
+};
+//
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-secondary-subtle">
@@ -42,7 +48,7 @@ export default function NavBar () {
                             
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/login">
+                            <Link className="nav-link" to="/login" onClick={logsOut}>
                                 Logout
                             </Link>
                         </li>

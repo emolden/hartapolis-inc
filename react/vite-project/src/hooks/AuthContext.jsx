@@ -57,11 +57,11 @@ export const AuthProvider = ({ children }) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify({ username, password}),
             });
             if (!response.ok) {
                 const errorData = await response.json();
-                setErrorMessage(errorData.message || 'Login failed'); // Set error message
+                setErrorMessage(errorData.message || 'Login failed'); 
                 throw new Error(errorData.message || 'Login failed'); 
             }
 
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
             console.log(data);
 
             setUser({
-                username,
+                username, role
             });
             
             setErrorMessage('');
