@@ -55,38 +55,42 @@ export default function Project () {
 
     return (
         <>
-        <h3>{project?.project_attributes.name}</h3>
-      <h6>Team Size: {project?.project_attributes.team_size}</h6>
-      <h6>Budget: ${project?.project_attributes.budget}</h6>
-      <h6>Workload: {project?.project_attributes.workload} days</h6>
-      <h6>Start Date: {project?.project_attributes.start_date}</h6>
-      <h6>Completion Date: {project?.project_attributes.completion_time}</h6>
-      <h6>Manager: {project?.project_attributes.manager_name}</h6>
+        <div class="container d-flex flex-column justify-content-center">
+            <div class="card">
+                <h3>{project?.project_attributes.name}</h3>
+            <h6>Team Size: {project?.project_attributes.team_size}</h6>
+            <h6>Budget: ${project?.project_attributes.budget}</h6>
+            <h6>Workload: {project?.project_attributes.workload} days</h6>
+            <h6>Start Date: {project?.project_attributes.start_date}</h6>
+            <h6>Completion Date: {project?.project_attributes.completion_time}</h6>
+            <h6>Manager: {project?.project_attributes.manager_name}</h6>
+            </div>
+      </div>
       <h6>Tasks:</h6>
       <RequireAuth>
       {user?.role==="manager"&&<button onClick={showNewRow}>Add a New Row</button>}
       </RequireAuth>
-          <table>
+          <table class="table table-striped">
             <thead>
                 <tr>
-                <th>
+                <th scope="col">
                     Description
                 </th>
-                <th>
+                <th scope="col">
                     Is Completed
                 </th>
-                <th>
+                <th scope="col">
                     Person Assigned
                 </th>
-                <th>
+                <th scope="col">
                     Due Date
                 </th>
-                <th>
+                <th scope="col">
                     Estimated Completion Time
                 </th>
                 
                 <RequireAuth>
-                {user?.role==="manager"&&<th>Delete</th>}
+                {user?.role==="manager"&&<th scope="col">Delete</th>}
                 </RequireAuth>
 
                 </tr>
