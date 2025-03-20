@@ -1,15 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const TeamProjects = (props) => {
     return (
         <>
-            <div>
             <h1>Team Projects</h1>
-            <button>
+            <div>
             {
-          props.projects.map((project) => ( <h3>Team Projects {project.project_attributes.name}</h3>))
-        }
-            </button>
+                props.projects.map((project) => ( <button 
+                    key = {project._id}> 
+                    <Link to = {`/projects/${project._id}`}>
+                        {project.project_attributes.name}
+                    </Link>
+                    </button>))
+            }
             </div>
         </>
     );

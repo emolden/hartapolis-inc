@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/project-predictor" element={<ProjectPredictor />} />
           <Route exact path="/" element={<TeamProjects projects={projects}/>}/>
               {/* Task component is inside Project component */}
-          <Route exact path="/projectid" element={<Project />}/>
+          <Route exact path="/projects/:id" element={<Project />}/>
               
             {/* <a href="https://vite.dev" target="_blank">
               <img src={viteLogo} className="logo" alt="Vite logo" />

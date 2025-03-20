@@ -28,12 +28,13 @@ app.get('/api/projects', async (req,res) => {
 
 //LEFT OFF WEDNESDAY WORKING ON Deleting tasks
 app.patch('/projects/:id', async (req,res) => {
+  const { id } = req.params;  
+  const { person_assigned } = req.body;
     try {
         const client = await MongoClient.connect(MONGO_DB_URL);
         const db = client.db(MONGO_DB);
         const collection = db.collection('projects');
-        const { id } = req.params;  
-        const { person_assigned } = req.body;  
+          
 
         const updatedProject = await collection.updateOne(
             { _id: new ObjectId(id) },  
@@ -85,6 +86,22 @@ app.post('/login', async (req, res) => {
       res.status(500).send('Internal server error');
     }
   });
+
+  app.get('/api/projects/:id', async (req, res) => {
+    console.log('in get project by id route')
+
+    const { id } = req.params;  
+    try{
+      const client = await MongoClient.connect(MONGO_DB_URL);
+      const db = client.db(MONGO_DB);
+      const collection = db.collection('projects');
+      const project = await collection.findOne({_id: new ObjectId(id)})
+      res.json(project);
+    } catch (err) {
+        console.error('Error: ', err);
+        res.status(500).send("Error getting project");
+    }
+});
 
 
 
