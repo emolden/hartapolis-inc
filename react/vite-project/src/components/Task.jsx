@@ -42,6 +42,39 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
         
     }
 
+    const handleDelete = async (e, ) => {
+        
+        // let value = e.target.innerHTML
+        console.log(id)
+        const taskInfo = {
+            id: id,
+            is_completed: !isCompleted
+        }
+        try {
+            const response = await fetch(`http://localhost:3000/api/tasks/iscompleted`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(taskInfo),
+            });
+            console.log(response)
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            fetchProjectById();
+            // const data = await response.json();
+            
+           
+        } catch (error) {
+            console.error("Error posting task is_completed", error);
+            
+        }
+        
+    }
+
     return (
         <>
             <tbody>
@@ -86,7 +119,7 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
                         onChange={(e) => setCompletionTime({...completionTime, [`${task.task_id}`]: e.target.value})}
                         /> hours
                     </td> : <td>{task.estimated_duration}</td> }
-                    {pageEdit? <td><button>X</button></td> : ""}
+                    {pageEdit? <td><button onClick={(e) => handleDelete()}>X</button></td> : ""}
                 </tr>
                 ))
             }
