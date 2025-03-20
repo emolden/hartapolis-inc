@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useAuth } from '../hooks/AuthContext';
+import RequireAuth from "./RequireAuth";
 
 export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
         const[description, setDescription] = useState({});
@@ -6,6 +8,8 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
         const[personAssigned, setPersonAssigned] = useState({});
         const[dueDate, setDueDate] = useState({});
         const[completionTime, setCompletionTime] = useState({});
+
+        const { user } = useAuth();
         
 
 
@@ -115,7 +119,9 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
                         onChange={(e) => setCompletionTime({...completionTime, [`${task.task_id}`]: e.target.value})}
                         /> hours
                     </td> : <td>{task.estimated_duration}</td> }
-                    <td><button onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> 
+                    <RequireAuth>
+                    {user?.role==="manager"&&<td><button onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> }
+                    </RequireAuth> 
                 </tr>
                 ))
             }

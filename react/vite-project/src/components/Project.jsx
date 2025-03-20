@@ -61,7 +61,7 @@ export default function Project () {
       <h6>Workload: {project?.project_attributes.workload} days</h6>
       <h6>Start Date: {project?.project_attributes.start_date}</h6>
       <h6>Completion Date: {project?.project_attributes.completion_time}</h6>
-      <h6>Manager: {project?.project_attributes.manager}</h6>
+      <h6>Manager: {project?.project_attributes.manager_name}</h6>
       <h6>Tasks:</h6>
       <RequireAuth>
       {user?.role==="manager"&&<button onClick={showNewRow}>Add a New Row</button>}
@@ -85,7 +85,9 @@ export default function Project () {
                     Estimated Completion Time
                 </th>
                 
-                <th>Delete</th>
+                <RequireAuth>
+                {user?.role==="manager"&&<th>Delete</th>}
+                </RequireAuth>
 
                 </tr>
             </thead>
@@ -94,7 +96,7 @@ export default function Project () {
             {newRow? <NewRow projectId={project._id} fetchProjectById={fetchProjectById} setNewRow={setNewRow}/> : ""}
             </tbody>
           </table>
-          {pageEdit? <button>Save</button> : ""}
+          {/* {pageEdit? <button>Save</button> : ""} */}
         </>
     );
 };
