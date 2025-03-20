@@ -76,7 +76,7 @@ export default function ProjectPredictor() {
               onChange={(e) => setBudget(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="start-date">Start Date</label>
             <input
               type="date"
@@ -85,14 +85,14 @@ export default function ProjectPredictor() {
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
             />
-          </div>
+          </div> */}
           <button type="submit" className="btn btn-primary">Predict Workload</button>
         </form>
       </div>
       <div className="container">
         <div>
           <h5>Workload: {workload} days</h5>
-          <h5>End Date: {endDate}</h5>
+          {/* <h5>End Date: {endDate}</h5> */}
         </div>
       </div>
     </>
