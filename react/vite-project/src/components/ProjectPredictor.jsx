@@ -5,14 +5,14 @@ export default function ProjectPredictor () {
     const [budget, setBudget] = useState(0)
     const [startDate, setStartDate] = useState(null)
 
-    const handleLogin = () => {
+    const handlePredict = () => {
 
     }
     return (
         <>
             <h1>Project Predictor</h1>
             <div className="container">
-            <form onSubmit={handleLogin} className="mt-5">
+            <form onSubmit={handlePredict} className="mt-5">
                 <div className="form-group">
                     <label htmlFor="team-size">Team Size</label>
                     <input

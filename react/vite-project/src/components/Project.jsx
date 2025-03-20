@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react'
 import Task from "./Task";
 
 export default function Project () {
-    const [project, setProject] = useState()
+    const [project, setProject] = useState(null)
+    const [pageEdit, setPageEdit] = useState(false)
 
     let { id } = useParams();
 
@@ -26,6 +27,10 @@ export default function Project () {
           fetchProjectById(id);
         }, [])
 
+    const changePageEdit = () => {
+        setPageEdit(!pageEdit)
+    }
+
     return (
         <>
             <h3>{project?.project_attributes.name}</h3>
@@ -38,6 +43,7 @@ export default function Project () {
       <h6>Manager: {project?.project_attributes.manager}</h6>
       <h6>Tasks:</h6>
       <h6>Order By *dropdown*</h6>
+      <button onClick={changePageEdit}>Edit</button>
           <table>
             <thead>
                 <tr>
@@ -56,10 +62,12 @@ export default function Project () {
                 <th>
                     Estimated Completion Time
                 </th>
-                <th>(manager) Delete</th>
+                {pageEdit? <th>Delete</th> : ""}
                 </tr>
             </thead>
-            <Task tasks={project?.tasks}/>
+            <tbody>
+            <Task tasks={project?.tasks} setProject={setProject} project={project} pageEdit={pageEdit}/>
+            </tbody>
           </table>
         </>
     );
