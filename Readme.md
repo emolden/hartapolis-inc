@@ -17,7 +17,7 @@
 - order by
 - Post route to add task
         ProjectPredictor component
-- Get route for predictions
+-       Get route for predictions
         create 1000 records of dummy data
         use sklearn.learn_model.LearnRegression to predict project completion date and workload
-- Display prediction on the page
+-       Display prediction on the page
