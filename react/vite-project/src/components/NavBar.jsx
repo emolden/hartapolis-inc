@@ -37,9 +37,14 @@ export default function NavBar () {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/login">
-                                Login
+                                Authenticate
                             </Link>
                             
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/login">
+                                Logout
+                            </Link>
                         </li>
                     </ul>
                     {/* <Search setData={setData} /> */}
