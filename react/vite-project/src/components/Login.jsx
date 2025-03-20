@@ -7,13 +7,29 @@ function Login() {
     const [password, setPassword] = useState('');
     const { login } = useAuth();
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState('');
+
+    // const handleLogin = async (event) => {
+    //     event.preventDefault();
+    //     await login(username, password);
+    //     console.log(username, password);
+    //     navigate('/');
+    // };
 
     const handleLogin = async (event) => {
         event.preventDefault();
-        await login(username, password);
-        console.log(username, password);
-        navigate('/');
+        setErrorMessage(''); 
+        
+        try {
+            await login(username, password);
+            //console.log(username, password);
+
+            navigate('/');
+        } catch (error) {
+            setErrorMessage('Invalid username or password. Please try again');
+        }
     };
+
     return (
         <>
             <div className="container">
@@ -40,9 +56,15 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
+                     {/* displays error message, i think */}
+                    <div className="alert alert-danger mt-3">
+                        {errorMessage}
+                    </div>
+
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>
         </div>
+
         </>
     );
 };
