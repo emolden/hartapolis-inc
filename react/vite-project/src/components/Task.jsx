@@ -91,7 +91,7 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
                         onChange={(e) => setDescription({...description, [`${task.task_id}`]: e.target.value})}
                         />
                     </td> : <td>{task.description}</td> }
-                    <td><button onClick = {(e) =>changeCompleted(e, task.task_id, task.is_completed)}>{task.is_completed? 'Yes' : 'No'}</button></td>
+                    <td><button type="button" class={task.is_completed? "btn btn-outline-success" : "btn btn-outline-danger"} onClick = {(e) =>changeCompleted(e, task.task_id, task.is_completed)}>{task.is_completed? 'Yes' : 'No'}</button></td>
                     {pageEdit? <td><input
                         type="text"
                         className="form-control"
@@ -120,7 +120,7 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
                         /> hours
                     </td> : <td>{task.estimated_duration}</td> }
                     <RequireAuth>
-                    {user?.role==="manager"&&<td><button onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> }
+                    {user?.role==="manager"&&<td><button type="button" class="btn btn-outline-danger btn-sm" onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> }
                     </RequireAuth> 
                 </tr>
                 ))

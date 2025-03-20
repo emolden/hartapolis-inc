@@ -88,7 +88,7 @@ export default function NewRow ({projectId, fetchProjectById, setNewRow}) {
                     </td>
                     {/* <td><button onClick={(e) => handleDelete(e, task.task_id)}>X</button></td> : ""} */}
                 </tr>
-                <button onClick={handleSaveRow}>Save Row</button>
+                <button type="button" class="btn btn-outline-primary" onClick={handleSaveRow}>Save Row</button>
         </>
     )
 }

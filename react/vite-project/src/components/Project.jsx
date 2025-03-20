@@ -68,7 +68,7 @@ export default function Project () {
       </div>
       <h6>Tasks:</h6>
       <RequireAuth>
-      {user?.role==="manager"&&<button onClick={showNewRow}>Add a New Row</button>}
+      {user?.role==="manager"&&<button type="button" class="btn btn-outline-primary" onClick={showNewRow}>Add a New Row</button>}
       </RequireAuth>
           <table class="table table-striped">
             <thead>
