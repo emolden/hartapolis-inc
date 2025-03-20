@@ -1,13 +1,26 @@
 import { useParams } from "react-router-dom"
 
-import { useState, useEffect } from 'react'
+import { useAuth } from '../hooks/AuthContext';
+
+import { useState, useEffect, useContext } from 'react'
 import Task from "./Task";
+import RequireAuth from "./RequireAuth";
 
 export default function Project () {
     const [project, setProject] = useState(null)
     const [pageEdit, setPageEdit] = useState(false)
+
     const[change, setChange] = useState('')
     
+
+
+    const[description, setDescription] = useState("");
+    const[isComplete, setIsComplete] = useState();
+    const[personAssigned, setPersonAssigned] = useState();
+    const[dueDate, setDueDate] = useState();
+    const[completionTime, setCompletionTime] = useState();
+    const { user } = useAuth();
+        console.log({user})
 
     let { id } = useParams();
     const fetchProjectById = async ()=> { 
@@ -46,7 +59,9 @@ export default function Project () {
       <h6>Manager: {project?.project_attributes.manager}</h6>
       <h6>Tasks:</h6>
       <h6>Order By *dropdown*</h6>
-      <button onClick={changePageEdit}>Edit</button>
+      <RequireAuth>
+      {user?.role==="manager"&&<button onClick={changePageEdit}>Edit</button>}
+      </RequireAuth>
           <table>
             <thead>
                 <tr>
@@ -65,7 +80,9 @@ export default function Project () {
                 <th>
                     Estimated Completion Time
                 </th>
+                
                 {pageEdit? <th>Delete</th> : ""}
+
                 </tr>
             </thead>
             {/* <tbody> */}
