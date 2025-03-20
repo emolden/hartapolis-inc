@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 
 export default function ProjectPredictor() {
-  const [teamSize, setTeamSize] = useState(0);
-  const [budget, setBudget] = useState(0);
+  const [teamSize, setTeamSize] = useState("");
+  const [budget, setBudget] = useState("");
   const [startDate, setStartDate] = useState(null);
 
 
