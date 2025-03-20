@@ -51,10 +51,10 @@ export default function ProjectPredictor() {
 
   return (
     <>
-      <h1>Project Predictor</h1>
+      <h1 className="text-center mb-4">Project Predictor</h1>
       <div className="container">
-        <form onSubmit={handlePredict} className="mt-5">
-          <div className="form-group">
+        <form onSubmit={handlePredict} className="bg-light p-4 rounded shadow-sm">
+          <div className="form-group mb-3">
             <label htmlFor="team-size">Team Size</label>
             <input
               type="number"
@@ -65,7 +65,7 @@ export default function ProjectPredictor() {
               onChange={(e) => setTeamSize(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-3">
             <label htmlFor="budget">Budget</label>
             <input
               type="number"
@@ -86,12 +86,12 @@ export default function ProjectPredictor() {
               onChange={(e) => setStartDate(e.target.value)}
             />
           </div> */}
-          <button type="submit" className="btn btn-primary">Predict Workload</button>
+          <button type="submit" className="btn btn-lg btn-primary">Predict Workload</button>
         </form>
       </div>
       <div className="container">
-        <div>
-          <h5>Workload: {workload} days</h5>
+        <div className='alert alert-info'>
+          <h5 className="mb-0">Workload: {workload} days</h5>
           {/* <h5>End Date: {endDate}</h5> */}
         </div>
       </div>
