@@ -6,6 +6,12 @@ import Task from "./Task";
 export default function Project () {
     const [project, setProject] = useState(null)
     const [pageEdit, setPageEdit] = useState(false)
+    const[description, setDescription] = useState("");
+    const[isComplete, setIsComplete] = useState();
+    const[personAssigned, setPersonAssigned] = useState();
+    const[dueDate, setDueDate] = useState();
+    const[completionTime, setCompletionTime] = useState();
+    
 
     let { id } = useParams();
 
@@ -65,10 +71,11 @@ export default function Project () {
                 {pageEdit? <th>Delete</th> : ""}
                 </tr>
             </thead>
-            <tbody>
-            <Task tasks={project?.tasks} setProject={setProject} project={project} pageEdit={pageEdit}/>
-            </tbody>
+            {/* <tbody> */}
+            <Task tasks={project?.tasks} setProject={setProject} project={project} pageEdit={pageEdit} isComplete={isComplete} setIsComplete={setIsComplete}/>
+            {/* </tbody> */}
           </table>
+          {pageEdit? <button>Save</button> : ""}
         </>
     );
 };

@@ -104,7 +104,28 @@ app.post('/login', async (req, res) => {
 });
 
 
+app.patch('/api/tasks/iscompleted', async (req,res) => {
+    
+  const { id, is_completed } = req.body;
+  // console.log(taskInfo);
+    try {
+        const client = await MongoClient.connect(MONGO_DB_URL);
+        const db = client.db(MONGO_DB);
+        const collection = db.collection('projects');
+        const tasks = await collection.updateOne({"tasks.task_id": id}, {$set:{"is_completed": is_completed}})
+         console.log(tasks) 
+        
+        // if (updatedProject.modifiedCount === 0) {
+        //     return res.status(404).send('Project not found or task not found');
+        // }
 
+        // res.json(updatedProject);  // Return updated project
+    } 
+    catch (err) {
+            console.error('Error:', err);
+            res.status(500).send('Error patching is complete task');
+        }
+})
 
 
 app.listen(PORT, () => {console.log(`Server is running on http://localhost:${PORT}`);});
