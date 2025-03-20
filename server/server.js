@@ -4,6 +4,10 @@ import { MongoClient, ObjectId } from 'mongodb';
 const app = express();
 const PORT = 3000;
 
+//adding bootstrap
+import 'bootstrap';
+//
+
 app.use(express.json());
 app.use(cors());
 
