@@ -10,7 +10,7 @@ export default function NavBar () {
         <>
             <nav className="navbar navbar-expand-lg bg-secondary-subtle">
                 <div className="container-fluid">
-                <a className="navbar-brand" href="#">HA</a>
+                <a className="navbar-brand" href="/">HA</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -26,15 +26,6 @@ export default function NavBar () {
                                 Project Predictor
                             </Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link  className="nav-link" to="/add">
-                            Add Sock
-                            </Link>
-                        </li> */}
-                        <li className="nav-item">
-                            <div className="nav-link">Hartapolis Inc.</div>
-                            
-                        </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/login">
                                 Authenticate
@@ -47,7 +38,7 @@ export default function NavBar () {
                             </Link>
                         </li>
                     </ul>
-                    {/* <Search setData={setData} /> */}
+            
                 </div>
                 </div>
             </nav>
