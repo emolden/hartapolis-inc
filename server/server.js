@@ -80,7 +80,7 @@ app.post('/login', async (req, res) => {
         return res.status(400).send('Invalid Password');
       }
       client.close(); 
-      res.status(200).send('Login successful');
+      res.status(200).send(user);
     } catch (err) {
       console.error(err);
       res.status(500).send('Internal server error');

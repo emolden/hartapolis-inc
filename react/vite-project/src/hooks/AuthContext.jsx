@@ -66,11 +66,12 @@ export const AuthProvider = ({ children }) => {
             }
 
             // Changed to response.text and it worked? somehow?
-            const data = await response.text();
-            console.log(data);
+            const user = await response.json();
+            console.log(user);
 
             setUser({
-                username, role
+                username: user.name,
+                role: user.role
             });
             
             setErrorMessage('');
