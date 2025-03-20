@@ -8,7 +8,7 @@
         create 5 projects and add to project.json and capstone db
         Login component
         Post route for login
-- Logout button?
+        Logout button?
         Project component
         Task component
 - EditableTask component - inside useAuth
