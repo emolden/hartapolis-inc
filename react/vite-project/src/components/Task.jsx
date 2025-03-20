@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-export default function Task ( {tasks, pageEdit, isComplete, setIsComplete} ) {
-    const[description, setDescription] = useState({});
+export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
+        const[description, setDescription] = useState({});
         // const[isComplete, setIsComplete] = useState();
         const[personAssigned, setPersonAssigned] = useState({});
         const[dueDate, setDueDate] = useState({});
@@ -25,11 +25,13 @@ export default function Task ( {tasks, pageEdit, isComplete, setIsComplete} ) {
                 },
                 body: JSON.stringify(taskInfo),
             });
+            console.log(response)
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-
+            
+            fetchProjectById();
             // const data = await response.json();
             
            

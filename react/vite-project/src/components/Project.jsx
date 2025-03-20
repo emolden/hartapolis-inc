@@ -6,32 +6,30 @@ import Task from "./Task";
 export default function Project () {
     const [project, setProject] = useState(null)
     const [pageEdit, setPageEdit] = useState(false)
-    const[description, setDescription] = useState("");
-    const[isComplete, setIsComplete] = useState();
-    const[personAssigned, setPersonAssigned] = useState();
-    const[dueDate, setDueDate] = useState();
-    const[completionTime, setCompletionTime] = useState();
+    const[change, setChange] = useState('')
     
 
     let { id } = useParams();
-
+    const fetchProjectById = async ()=> { 
+        console.log('fetch project by id being called')
+        try {
+          const response = await fetch(`http://localhost:3000/api/projects/${id}`);
+          if (!response.ok) {
+            throw new Error('Data could not be fetched!');
+          }
+          const json_response = await response.json();
+          setProject(json_response);
+          console.log(json_response);
+        } catch (err) {
+          console.error("Error fetching character by id", err);
+        }
+    
+      };
+   
     useEffect (() => {
-        const fetchProjectById = async (id)=> { 
-            try {
-              const response = await fetch(`http://localhost:3000/api/projects/${id}`);
-              if (!response.ok) {
-                throw new Error('Data could not be fetched!');
-              }
-              const json_response = await response.json();
-              setProject(json_response);
-              console.log(json_response);
-            } catch (err) {
-              console.error("Error fetching character by id", err);
-            }
         
-          };
           fetchProjectById(id);
-        }, [])
+        }, [change])
 
     const changePageEdit = () => {
         setPageEdit(!pageEdit)
@@ -39,8 +37,7 @@ export default function Project () {
 
     return (
         <>
-            <h3>{project?.project_attributes.name}</h3>
-      <h3>(only manager) Edit Project *button*</h3>
+        <h3>{project?.project_attributes.name}</h3>
       <h6>Team Size: {project?.project_attributes.team_size}</h6>
       <h6>Budget: ${project?.project_attributes.budget}</h6>
       <h6>Workload: {project?.project_attributes.workload} days</h6>
@@ -72,7 +69,7 @@ export default function Project () {
                 </tr>
             </thead>
             {/* <tbody> */}
-            <Task tasks={project?.tasks} setProject={setProject} project={project} pageEdit={pageEdit} isComplete={isComplete} setIsComplete={setIsComplete}/>
+            <Task tasks={project?.tasks} pageEdit={pageEdit} fetchProjectById={fetchProjectById}/>
             {/* </tbody> */}
           </table>
           {pageEdit? <button>Save</button> : ""}

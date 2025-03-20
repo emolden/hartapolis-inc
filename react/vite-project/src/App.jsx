@@ -17,6 +17,8 @@ import RequireAuth from './components/RequireAuth';
 function App() {
   const [projects, setProjects] = useState([]);
 
+  
+
   useEffect(() =>{
     const fetchData = async () => {
       try {
