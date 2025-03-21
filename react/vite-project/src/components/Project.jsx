@@ -55,8 +55,8 @@ export default function Project () {
 
     return (
         <>
-        <div class="container d-flex flex-column justify-content-center">
-            <div class="card">
+        <div class="container ">
+            <div class="card text-center mt-5 mb-5">
                 <h3>{project?.project_attributes.name}</h3>
             <h6>Team Size: {project?.project_attributes.team_size}</h6>
             <h6>Budget: ${project?.project_attributes.budget}</h6>
@@ -66,15 +66,16 @@ export default function Project () {
             <h6>Manager: {project?.project_attributes.manager_name}</h6>
             </div>
       </div>
-      <h6>Tasks:</h6>
+       
       <RequireAuth>
-      {user?.role==="manager"&&<button type="button" class="btn btn-outline-primary" onClick={showNewRow}>Add a New Row</button>}
+      {user?.role==="manager"&&<button type="button" class="btn btn-outline-primary m-3 " onClick={showNewRow}>Add a New Task</button>}
       </RequireAuth>
-          <table class="table table-striped">
+     
+          <table class="table table-striped text-center m-3">
             <thead>
                 <tr>
                 <th scope="col">
-                    Description
+                   Task Description
                 </th>
                 <th scope="col">
                     Is Completed
@@ -86,7 +87,7 @@ export default function Project () {
                     Due Date
                 </th>
                 <th scope="col">
-                    Estimated Completion Time
+                    Days Estimate
                 </th>
                 
                 <RequireAuth>

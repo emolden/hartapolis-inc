@@ -32,8 +32,11 @@ function Login() {
 
     return (
         <>
+            <h1 class="text-center mt-5">Login Credentials</h1>
             <div className="container">
+                
             <form onSubmit={handleLogin} className="mt-5">
+            <div class="card mb-5 p-3">
                 <div className="form-group">
                     <label htmlFor="username">Username</label>
                     <input
@@ -56,10 +59,11 @@ function Login() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
+                </div>
                      {/* displays error message, i think */}
-                    <div className="alert alert-danger mt-3">
+                    {errorMessage && <div className="alert alert-danger mt-3">
                         {errorMessage}
-                    </div>
+                    </div>}
 
                 <button type="submit" className="btn btn-primary">Login</button>
             </form>

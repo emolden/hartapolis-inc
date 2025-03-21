@@ -51,9 +51,10 @@ export default function ProjectPredictor() {
 
   return (
     <>
-      <h1 className="text-center mb-4">Project Predictor</h1>
+      <h1 className="text-center mb-4 mt-5">Project Predictor</h1>
       <div className="container">
         <form onSubmit={handlePredict} className="bg-light p-4 rounded shadow-sm">
+          <div class="card mb-3 p-3">
           <div className="form-group mb-3">
             <label htmlFor="team-size">Team Size</label>
             <input
@@ -76,6 +77,7 @@ export default function ProjectPredictor() {
               onChange={(e) => setBudget(e.target.value)}
             />
           </div>
+          </div>
           {/* <div className="form-group">
             <label htmlFor="start-date">Start Date</label>
             <input
@@ -90,7 +92,7 @@ export default function ProjectPredictor() {
         </form>
       </div>
       <div className="container">
-        <div className='alert alert-info'>
+        <div className='alert alert-info text-center'>
           <h5 className="mb-0">Workload: {workload} days</h5>
           {/* <h5>End Date: {endDate}</h5> */}
         </div>
