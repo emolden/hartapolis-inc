@@ -55,15 +55,16 @@ export default function Project () {
 
     return (
         <>
-        <div class="container ">
-            <div class="card text-center mt-5 mb-5">
-                <h3>{project?.project_attributes.name}</h3>
+        <div className="container ">
+            <div className="card text-center mt-5 mb-5 ">
+            <h3>{project?.project_attributes.name}</h3>
             <h6>Team Size: {project?.project_attributes.team_size}</h6>
             <h6>Budget: ${project?.project_attributes.budget}</h6>
             <h6>Workload: {project?.project_attributes.workload} days</h6>
             <h6>Start Date: {project?.project_attributes.start_date}</h6>
             <h6>Completion Date: {project?.project_attributes.completion_time}</h6>
             <h6>Manager: {project?.project_attributes.manager_name}</h6>
+            
             </div>
       </div>
        

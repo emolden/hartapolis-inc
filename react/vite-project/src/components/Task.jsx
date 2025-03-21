@@ -10,6 +10,10 @@ export default function Task ( {tasks, pageEdit, fetchProjectById} ) {
         const[completionTime, setCompletionTime] = useState({});
 
         const { user } = useAuth();
+
+        const editTasks = () =>  {
+            console.log(description, personAssigned, dueDate, completionTime)
+        }
         
 
 
