@@ -199,5 +199,273 @@
         "estimated_duration": 16
       }
     ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Omicron",
+      "team_size": 5,
+      "budget": 100000,
+      "workload": 150,
+      "completion_time": "2025-12-31",
+      "start_date": "2025-04-05",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "task_id": "bcb5f91c-59e7-4a4d-8b8e-4208beff7d85",
+        "description": "Initial planning phase of the project",
+        "is_completed": true,
+        "person_assigned": "John Doe",
+        "due_date": "2025-04-15",
+        "estimated_duration": 10
+      },
+      {
+        "task_id": "795ef9c2-dc16-46fc-9b9b-37e1307c5d7d",
+        "description": "Develop project timeline and milestones",
+        "is_completed": false,
+        "person_assigned": "Jane Smith",
+        "due_date": "2025-04-30",
+        "estimated_duration": 12
+      },
+      {
+        "task_id": "e8b0808b-0709-4b93-8f2d-b7fdc44c4a52",
+        "description": "Create initial wireframes and mockups",
+        "is_completed": false,
+        "person_assigned": "Emily Brown",
+        "due_date": "2025-05-10",
+        "estimated_duration": 8
+      },
+      {
+        "task_id": "d4f13d3a-d1f5-4b73-9247-0b7f3ed95162",
+        "description": "Create project budget and financial plan",
+        "is_completed": false,
+        "person_assigned": "Michael Johnson",
+        "due_date": "2025-04-25",
+        "estimated_duration": 7
+      },
+      {
+        "task_id": "9b7f27db-df3d-48e7-b97b-8f4a786d2391",
+        "description": "Setup project management tools and platform",
+        "is_completed": false,
+        "person_assigned": "Sophia Lee",
+        "due_date": "2025-05-01",
+        "estimated_duration": 5
+      },
+      {
+        "task_id": "b1c974c5-1df1-4e4a-a907-89ab4d5b7b8b",
+        "description": "Conduct stakeholder interviews for project requirements",
+        "is_completed": true,
+        "person_assigned": "Liam Davis",
+        "due_date": "2025-05-12",
+        "estimated_duration": 8
+      },
+      {
+        "task_id": "71fa4620-2b23-490d-8411-c572c77877be",
+        "description": "Create project scope document",
+        "is_completed": false,
+        "person_assigned": "Ethan White",
+        "due_date": "2025-05-20",
+        "estimated_duration": 6
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Sigma",
+      "team_size": 6,
+      "budget": 150000,
+      "workload": 200,
+      "completion_time": "2026-01-31",
+      "start_date": "2025-04-16",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "task_id": "dba7b295-d12a-4cbe-95f9-dbd68b8a1ea0",
+        "description": "Gather project requirements from stakeholders",
+        "is_completed": false,
+        "person_assigned": "Michael Black",
+        "due_date": "2025-05-01",
+        "estimated_duration": 15
+      },
+      {
+        "task_id": "9a279fa7-74a9-4190-b17b-bd81eb63e206",
+        "description": "Design the software architecture",
+        "is_completed": true,
+        "person_assigned": "Sophia White",
+        "due_date": "2025-06-01",
+        "estimated_duration": 20
+      },
+      {
+        "task_id": "d1d5fa68-6801-4c26-ae09-e52d1c33a24e",
+        "description": "Implement database schema and structure",
+        "is_completed": false,
+        "person_assigned": "David Green",
+        "due_date": "2025-07-10",
+        "estimated_duration": 18
+      },
+      {
+        "task_id": "f9b57535-ecfa-4d04-8f60-2ecbdf9b4f66",
+        "description": "Develop initial prototypes for testing",
+        "is_completed": false,
+        "person_assigned": "Olivia Jones",
+        "due_date": "2025-08-01",
+        "estimated_duration": 12
+      },
+      {
+        "task_id": "a5e6df34-7469-4290-b602-c8a258ba1b7c",
+        "description": "Test software architecture and integration",
+        "is_completed": false,
+        "person_assigned": "Ethan Lee",
+        "due_date": "2025-08-20",
+        "estimated_duration": 10
+      },
+      {
+        "task_id": "539e72be-d5d4-441d-83fd-62e38160b8c0",
+        "description": "Implement unit tests for core modules",
+        "is_completed": true,
+        "person_assigned": "Olivia Brown",
+        "due_date": "2025-09-10",
+        "estimated_duration": 8
+      },
+      {
+        "task_id": "75b77bc2-d090-4a0f-bc80-61963a0de09c",
+        "description": "Setup continuous integration pipeline",
+        "is_completed": false,
+        "person_assigned": "Emma Carter",
+        "due_date": "2025-09-15",
+        "estimated_duration": 6
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Rho",
+      "team_size": 4,
+      "budget": 80000,
+      "workload": 120,
+      "completion_time": "2025-10-30",
+      "start_date": "2025-04-09",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "task_id": "a1f42b1f-9f1c-4f96-bf77-5f450b5e63ad",
+        "description": "Define project scope and goals",
+        "is_completed": false,
+        "person_assigned": "Aiden Scott",
+        "due_date": "2025-04-25",
+        "estimated_duration": 8
+      },
+      {
+        "task_id": "72c973db-2b0c-4c55-b8ca-b3187b9131d4",
+        "description": "Develop core API functionality",
+        "is_completed": true,
+        "person_assigned": "Ella Adams",
+        "due_date": "2025-06-15",
+        "estimated_duration": 16
+      },
+      {
+        "task_id": "bcfd53b5-d7c5-4d44-82e9-01fe2f56c2a4",
+        "description": "Setup user authentication and security measures",
+        "is_completed": false,
+        "person_assigned": "Daniel Harris",
+        "due_date": "2025-07-05",
+        "estimated_duration": 10
+      },
+      {
+        "task_id": "5423b2f2-6b35-4e59-a334-df0f1ec9b078",
+        "description": "Implement user roles and permissions",
+        "is_completed": false,
+        "person_assigned": "Lily Walker",
+        "due_date": "2025-07-20",
+        "estimated_duration": 7
+      },
+      {
+        "task_id": "82f65fdf-cd8f-4099-9b99-9a6e9bc58eac",
+        "description": "Create user documentation for API",
+        "is_completed": false,
+        "person_assigned": "Oliver Smith",
+        "due_date": "2025-08-10",
+        "estimated_duration": 5
+      },
+      {
+        "task_id": "d59e4793-0204-4929-bf43-e52c3ed50c4e",
+        "description": "Set up server environment for API deployment",
+        "is_completed": true,
+        "person_assigned": "Mia Clark",
+        "due_date": "2025-08-25",
+        "estimated_duration": 9
+      },
+      {
+        "task_id": "345a62ad-07d2-452a-b06f-55a02966c4b2",
+        "description": "Deploy API to cloud infrastructure",
+        "is_completed": false,
+        "person_assigned": "Jason Lee",
+        "due_date": "2025-09-15",
+        "estimated_duration": 6
+      }
+    ]
+  },
+  {
+    "project_attributes": {
+      "name": "Project Omega",
+      "team_size": 7,
+      "budget": 120000,
+      "workload": 180,
+      "completion_time": "2026-03-31",
+      "start_date": "2025-03-26",
+      "manager_name": "Alice Green"
+    },
+    "tasks": [
+      {
+        "task_id": "a70f8dfb-24a1-46fa-91fe-e5e6c3df7cb3",
+        "description": "Market research and customer feedback collection",
+        "is_completed": false,
+        "person_assigned": "James Lee",
+        "due_date": "2025-04-10",
+        "estimated_duration": 14
+      },
+      {
+        "task_id": "cb7b0e19-8553-4e18-8768-5f77ff315289",
+        "description": "Create marketing strategy and positioning plan",
+        "is_completed": false,
+        "person_assigned": "Mia Brown",
+        "due_date": "2025-05-05",
+        "estimated_duration": 12
+      },
+      {
+        "task_id": "6bc0fe9c-02de-4f22-b307-e0b57c5f6b6e",
+        "description": "Design promotional materials and ad campaigns",
+        "is_completed": true,
+        "person_assigned": "Liam Clark",
+        "due_date": "2025-06-01",
+        "estimated_duration": 18
+      },
+      {
+        "task_id": "3de3c9f7-1259-4e78-a0a2-83a92ab1dfd5",
+        "description": "Launch marketing campaign and monitor performance",
+        "is_completed": false,
+        "person_assigned": "Zoe White",
+        "due_date": "2025-07-15",
+        "estimated_duration": 16
+      },
+      {
+        "task_id": "f315b457-d697-4939-b767-7c6b8b22f1a0",
+        "description": "Create brand awareness content",
+        "is_completed": false,
+        "person_assigned": "Ethan Black",
+        "due_date": "2025-06-15",
+        "estimated_duration": 8
+      },
+      {
+        "task_id": "d13b8d0b-3b62-4e9e-85c2-217b02233cc4",
+        "description": "Set up social media channels for promotion",
+        "is_completed": false,
+        "person_assigned": "Isabella King",
+        "due_date": "2025-07-30",
+        "estimated_duration": 6
+      }
+    ]
   }
 ]
